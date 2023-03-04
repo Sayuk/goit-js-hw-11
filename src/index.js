@@ -12,8 +12,8 @@ const btn = document.querySelector('.btn');
 
 
 async function pixabay(){
-    const resp1 = await axios.get('https://pixabay.com/api/');
-    console.log(resp1)
+    const response = await axios.get('https://pixabay.com/api/');
+    console.log(response)
 
     //     const response = await fetch(`https://pixabay.com/api/?key=34023502-430bec32b806d37b8bfdc9ad2&q&image_typ=photo&orientation=horizontal&safesearch=true`);
     //     if (!response.ok) {
