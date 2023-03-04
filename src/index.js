@@ -1,5 +1,5 @@
 import './css/styles.css';
-import axios from './node_modules/axios/dist/axios';
+import axios from 'axios';
 // import Notiflix from 'notiflix';
 // https://pixabay.com/api/
 
