@@ -1,6 +1,6 @@
 import './css/styles.css';
 import axios from './node_modules/axios/dist/axios';
-import Notiflix from 'notiflix';
+// import Notiflix from 'notiflix';
 // https://pixabay.com/api/
 
 const DEBOUNCE_DELAY = 300;
