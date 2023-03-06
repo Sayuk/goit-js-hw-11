@@ -42,7 +42,7 @@
 // }
 import './css/styles.css'
 import { fetchImages } from './fetchimage'
-import { card } from './templates/card.hbs'
+import { card } from './templates/card'
 
 import Notiflix from 'notiflix'
 import SimpleLightbox from 'simplelightbox'
