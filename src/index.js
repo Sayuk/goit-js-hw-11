@@ -58,7 +58,7 @@ let simpleLightBox
 const perPage = 40
 
 searchForm.addEventListener('submit', onSearchForm)
-loadMoreBtn.addEventListener('click', onLoadMoreBtn)
+// loadMoreBtn.addEventListener('click', onLoadMoreBtn)
 
 onScroll()
 onToTopBtn()
@@ -93,24 +93,24 @@ function onSearchForm(e) {
     .catch(error => console.log(error))
 }
 
-function onLoadMoreBtn() {
-  page += 1
-  simpleLightBox.destroy()
+// function onLoadMoreBtn() {
+//   page += 1
+//   simpleLightBox.destroy()
 
-  fetchImages(query, page, perPage)
-    .then(({ data }) => {
-      card(data.hits)
-      simpleLightBox = new SimpleLightbox('.gallery a').refresh()
+//   fetchImages(query, page, perPage)
+//     .then(({ data }) => {
+//       card(data.hits)
+//       simpleLightBox = new SimpleLightbox('.gallery a').refresh()
 
-      const totalPages = Math.ceil(data.totalHits / perPage)
+//       const totalPages = Math.ceil(data.totalHits / perPage)
 
-      if (page > totalPages) {
-        loadMoreBtn.classList.add('is-hidden')
-        alertEndOfSearch()
-      }
-    })
-    .catch(error => console.log(error))
-}
+//       if (page > totalPages) {
+//         loadMoreBtn.classList.add('is-hidden')
+//         alertEndOfSearch()
+//       }
+//     })
+//     .catch(error => console.log(error))
+// }
 
 function alertImagesFound(data) {
   Notiflix.Notify.success(`Hooray! We found ${data.totalHits} images.`)
