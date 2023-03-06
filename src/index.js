@@ -66,7 +66,7 @@ const perPage = 40
 // const gallery = document.querySelector('.gallery');
 
 
-form.addEventListener('submit', debounce(onSearchForm, DEBOUNCE_DELAY));
+searchForm.addEventListener('submit', debounce(onSearchForm, DEBOUNCE_DELAY));
 onScroll()
 onToTopBtn()
 
