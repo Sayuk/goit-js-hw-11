@@ -41,9 +41,9 @@
 
 // }
 import './css/styles.css'
-import { fetchImages } from './js/fetch-images'
-import { renderGallery } from './js/render-gallery'
-import { onScroll, onToTopBtn } from './js/scroll'
+import { fetchImages } from './fetchimage'
+import { card } from './templates/card.hbs'
+
 import Notiflix from 'notiflix'
 import SimpleLightbox from 'simplelightbox'
 import 'simplelightbox/dist/simple-lightbox.min.css'
@@ -80,7 +80,7 @@ function onSearchForm(e) {
       if (data.totalHits === 0) {
         alertNoImagesFound()
       } else {
-        renderGallery(data.hits)
+        card(data.hits)
         simpleLightBox = new SimpleLightbox('.gallery a').refresh()
         alertImagesFound(data)
 
@@ -98,7 +98,7 @@ function onLoadMoreBtn() {
 
   fetchImages(query, page, perPage)
     .then(({ data }) => {
-      renderGallery(data.hits)
+      card(data.hits)
       simpleLightBox = new SimpleLightbox('.gallery a').refresh()
 
       const totalPages = Math.ceil(data.totalHits / perPage)
