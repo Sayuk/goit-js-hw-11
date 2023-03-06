@@ -51,15 +51,22 @@ import 'simplelightbox/dist/simple-lightbox.min.css'
 const searchForm = document.querySelector('#search-form')
 const gallery = document.querySelector('.gallery')
 const loadMoreBtn = document.querySelector('.btn-load-more')
+const DEBOUNCE_DELAY = 300;
 let query = ''
 let page = 1
 
 let simpleLightBox
 const perPage = 40
 
-searchForm.addEventListener('submit', onSearchForm)
+// searchForm.addEventListener('submit', onSearchForm)
 // loadMoreBtn.addEventListener('click', onLoadMoreBtn)
+// 
+// const form = document.querySelector('#search-form');
+// const btn = document.querySelector('.btn');
+// const gallery = document.querySelector('.gallery');
 
+
+form.addEventListener('submit', debounce(onSearchForm, DEBOUNCE_DELAY));
 onScroll()
 onToTopBtn()
 
