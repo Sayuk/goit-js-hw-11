@@ -53,6 +53,7 @@ const gallery = document.querySelector('.gallery')
 const loadMoreBtn = document.querySelector('.btn-load-more')
 let query = ''
 let page = 1
+
 let simpleLightBox
 const perPage = 40
 
