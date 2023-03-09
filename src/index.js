@@ -1,48 +1,11 @@
-// import './css/styles.css';
-// import axios from 'axios';
-// import card from '../src/templates/card.hbs'
-// import Notiflix from 'notiflix';
-// // https://pixabay.com/api/
-
-// const DEBOUNCE_DELAY = 300;
-// const form = document.querySelector('#search-form');
-// const btn = document.querySelector('.btn');
-// const gallery = document.querySelector('.gallery');
-
-
-// form.addEventListener('form', debounce(onForm, DEBOUNCE_DELAY));
-
-// async function pixabay(query, page, perPage) {
-    // const response = await axios.get(`https://pixabay.com/api/?key=34023502-430bec32b806d37b8bfdc9ad2&q&image_typ=photo&orientation=horizontal&safesearch=true`);
-
-    // const response = await fetch(`https://pixabay.com/api/?key=34023502-430bec32b806d37b8bfdc9ad2&q&image_typ=photo&orientation=horizontal&safesearch=true`);
-    //         if (!response.ok) {
-    //             throw new Error(response.statusText)
-    //         }
-    //         const data = await response.json()
-    //         console.log(data);
-    //     return data;
-    // }
-    // pixabay()
-    //     .then(response => console.log(response))
-    //     .catch(err => console.log(err.message))
-
-//     try {
-//         const response = await axios.get(`https://pixabay.com/api/?key=34023502-430bec32b806d37b8bfdc9ad2&q&image_typ=photo&orientation=horizontal&safesearch=true`);
-//         gallery.innerHTML =  card(response.data)
-    
-//     } catch (err) {
-//         console.log(err)
-//     }
-// }
-// async function onForm() {
-//     const name = form.value.trim()
-
-
-// }
 import './css/styles.css'
-import { fetchImages } from './fetchimage'
+// import { fetchImages } from './js/fetch-images'
+// import { renderGallery } from './js/render-gallery'
+// import { onScroll, onToTopBtn } from './js/scroll'
 import { card } from './templates/card'
+import { fetchImages } from './fetchimage'
+import { onScroll, onToTopBtn } from './scroll'
+
 
 import Notiflix from 'notiflix'
 import SimpleLightbox from 'simplelightbox'
@@ -51,24 +14,16 @@ import 'simplelightbox/dist/simple-lightbox.min.css'
 const searchForm = document.querySelector('#search-form')
 const gallery = document.querySelector('.gallery')
 const loadMoreBtn = document.querySelector('.btn-load-more')
-const DEBOUNCE_DELAY = 300;
 let query = ''
 let page = 1
-
 let simpleLightBox
 const perPage = 40
 
-// searchForm.addEventListener('submit', onSearchForm)
-// loadMoreBtn.addEventListener('click', onLoadMoreBtn)
-// 
-// const form = document.querySelector('#search-form');
-// const btn = document.querySelector('.btn');
-// const gallery = document.querySelector('.gallery');
+searchForm.addEventListener('submit', onSearchForm)
+loadMoreBtn.addEventListener('click', onLoadMoreBtn)
 
-
-searchForm.addEventListener('submit', onSearchForm,);
-
-
+onScroll()
+onToTopBtn()
 
 function onSearchForm(e) {
   e.preventDefault()
@@ -100,24 +55,24 @@ function onSearchForm(e) {
     .catch(error => console.log(error))
 }
 
-// function onLoadMoreBtn() {
-//   page += 1
-//   simpleLightBox.destroy()
+function onLoadMoreBtn() {
+  page += 1
+  simpleLightBox.destroy()
 
-//   fetchImages(query, page, perPage)
-//     .then(({ data }) => {
-//       card(data.hits)
-//       simpleLightBox = new SimpleLightbox('.gallery a').refresh()
+  fetchImages(query, page, perPage)
+    .then(({ data }) => {
+      card(data.hits)
+      simpleLightBox = new SimpleLightbox('.gallery a').refresh()
 
-//       const totalPages = Math.ceil(data.totalHits / perPage)
+      const totalPages = Math.ceil(data.totalHits / perPage)
 
-//       if (page > totalPages) {
-//         loadMoreBtn.classList.add('is-hidden')
-//         alertEndOfSearch()
-//       }
-//     })
-//     .catch(error => console.log(error))
-// }
+      if (page > totalPages) {
+        loadMoreBtn.classList.add('is-hidden')
+        alertEndOfSearch()
+      }
+    })
+    .catch(error => console.log(error))
+}
 
 function alertImagesFound(data) {
   Notiflix.Notify.success(`Hooray! We found ${data.totalHits} images.`)
