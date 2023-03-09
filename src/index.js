@@ -67,7 +67,7 @@ const perPage = 40
 
 
 searchForm.addEventListener('submit', onSearchForm,);
-onScroll()
+
 onToTopBtn()
 
 function onSearchForm(e) {
