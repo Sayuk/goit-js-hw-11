@@ -53,7 +53,8 @@ function onSearchForm(e) {
         }
       }
     })
-    .catch(error => console.log(error))
+    // .catch(error => console.log(error))
+  .catch(error)
 }
 
 function onLoadMoreBtn() {
@@ -72,7 +73,8 @@ function onLoadMoreBtn() {
         alertEndOfSearch()
       }
     })
-    .catch(error => console.log(error))
+    // .catch(error => console.log(error))
+  .catch(error)
 }
 
 function alertImagesFound(data) {
