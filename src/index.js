@@ -6,10 +6,11 @@ import { card } from './templates/card'
 import { fetchImages } from './fetchimage'
 import { onScroll, onToTopBtn } from './scroll'
 
+import { Notiflix } from '../node_modules/notiflix/build/notiflix-notify-aio';
+// import Notiflix from 'notiflix'
+import SimpleLightbox from "simplelightbox"
+import "simplelightbox/dist/simple-lightbox.min.css"
 
-import Notiflix from 'notiflix'
-import SimpleLightbox from 'simplelightbox'
-import 'simplelightbox/dist/simple-lightbox.min.css'
 
 const searchForm = document.querySelector('#search-form')
 const gallery = document.querySelector('.gallery')
