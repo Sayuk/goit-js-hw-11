@@ -79,14 +79,14 @@ function alertImagesFound(data) {
   Notify.success(`Hooray! We found ${data.totalHits} images.`)
 }
 
-// function alertNoEmptySearch() {
-//   Notify.failure('The search string cannot be empty. Please specify your search query.')
-// }
+function alertNoEmptySearch() {
+  Notify.success('The search string cannot be empty. Please specify your search query.')
+}
 
 function alertNoImagesFound() {
- Notify.failure('Sorry, there are no images matching your search query. Please try again.')
+ Notify.success('Sorry, there are no images matching your search query. Please try again.')
 }
 
 function alertEndOfSearch() {
-  Notify.failure("We're sorry, but you've reached the end of search results.")
+  Notify.success("We're sorry, but you've reached the end of search results.")
 }
