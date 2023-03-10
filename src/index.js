@@ -8,9 +8,9 @@ import { onScroll, onToTopBtn } from './scroll'
 
 import { Notify } from '../node_modules/notiflix/build/notiflix-notify-aio';
 // import Notiflix from 'notiflix'
-import SimpleLightbox from "simplelightbox"
+// import SimpleLightbox from "simplelightbox"
 // import "simplelightbox/dist/simple-lightbox.min.css"
-import SimpleLightbox from "simplelightbox/dist/simple-lightbox.esm";
+import SimpleLightbox from "../node_modules/simplelightbox/dist/simple-lightbox.esm";
 
 
 const searchForm = document.querySelector('#search-form')
