@@ -1,4 +1,4 @@
-import './css/styles.css'
+// import './css/styles.css'
 // import { fetchImages } from './js/fetch-images'
 // import { renderGallery } from './js/render-gallery'
 // import { onScroll, onToTopBtn } from './js/scroll'
