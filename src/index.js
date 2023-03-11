@@ -81,7 +81,7 @@ function alertImagesFound(data) {
 }
 
 function alertNoEmptySearch() {
-  Notify.success('The search string cannot be empty. Please specify your search query.')
+  Notify.failure('The search string cannot be empty. Please specify your search query.')
 }
 
 function alertNoImagesFound() {
