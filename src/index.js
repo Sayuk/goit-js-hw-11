@@ -83,17 +83,17 @@ function onLoadMoreBtn() {
 }
 
 function alertImagesFound(data) {
-  Notiflix.success(`Hooray! We found ${data.totalHits} images.`)
+   Notiflix.Notify.success(`Hooray! We found ${data.totalHits} images.`)
 }
 
 function alertNoEmptySearch() {
-  Notiflix.failure('The search string cannot be empty. Please specify your search query.')
+   Notiflix.Notify.failure('The search string cannot be empty. Please specify your search query.')
 }
 
 function alertNoImagesFound() {
- Notiflix.failure('Sorry, there are no images matching your search query. Please try again.')
+  Notiflix.Notify.failure('Sorry, there are no images matching your search query. Please try again.')
 }
 
 function alertEndOfSearch() {
-  Notiflix.failure("We're sorry, but you've reached the end of search results.")
+  Notiflix.Notify.failure("We're sorry, but you've reached the end of search results.")
 }
