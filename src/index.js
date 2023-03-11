@@ -10,8 +10,8 @@ import { onScroll, onToTopBtn } from './scroll'
 import Notiflix from 'notiflix';
 
 // one by one
-import { Notiflix } from 'notiflix/build/notiflix-notify-aio';
-
+// import { Notiflix } from 'notiflix/build/notiflix-notify-aio';
+import { Notiflix } from '../node_modules/notiflix/build/notiflix-notify-aio'
 // import Notiflix from 'notiflix'
 // import SimpleLightbox from "simplelightbox"
 // import "simplelightbox/dist/simple-lightbox.min.css"
