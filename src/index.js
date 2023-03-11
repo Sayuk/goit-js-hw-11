@@ -87,7 +87,7 @@ function alertImagesFound(data) {
 }
 
 function alertNoEmptySearch() {
-  Notiflix.failure('The search string cannot be empty. Please specify your search query.')
+  Notiflix.Notify.warning('The search string cannot be empty. Please specify your search query.')
 }
 
 function alertNoImagesFound() {
@@ -95,5 +95,5 @@ function alertNoImagesFound() {
 }
 
 function alertEndOfSearch() {
-  Notiflix.success("We're sorry, but you've reached the end of search results.")
+  Notiflix.failure("We're sorry, but you've reached the end of search results.")
 }
