@@ -6,7 +6,7 @@ import { card } from './templates/card'
 import { fetchImages } from './fetchimage'
 import { onScroll, onToTopBtn } from './scroll'
 
-import { Notify } from '../node_modules/notiflix/build/notiflix-notify-aio';
+import { Notiflix } from '../node_modules/notiflix/build/notiflix-notify-aio';
 // import Notiflix from 'notiflix'
 // import SimpleLightbox from "simplelightbox"
 // import "simplelightbox/dist/simple-lightbox.min.css"
@@ -78,17 +78,17 @@ function onLoadMoreBtn() {
 }
 
 function alertImagesFound(data) {
-  Notify.success(`Hooray! We found ${data.totalHits} images.`)
+  Notiflix.Notify.success(`Hooray! We found ${data.totalHits} images.`)
 }
 
 function alertNoEmptySearch() {
-  Notify.failure('The search string cannot be empty. Please specify your search query.')
+  Notiflix.Notify.failure('The search string cannot be empty. Please specify your search query.')
 }
 
 function alertNoImagesFound() {
- Notify.success('Sorry, there are no images matching your search query. Please try again.')
+ Notiflix.Notify.success('Sorry, there are no images matching your search query. Please try again.')
 }
 
 function alertEndOfSearch() {
-  Notify.success("We're sorry, but you've reached the end of search results.")
+  Notiflix.Notify.success("We're sorry, but you've reached the end of search results.")
 }
