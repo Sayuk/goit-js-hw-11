@@ -87,7 +87,7 @@ function alertImagesFound(data) {
 }
 
 function alertNoEmptySearch() {
-  Notiflix.Notify.warning('The search string cannot be empty. Please specify your search query.')
+  Notiflix.warning('The search string cannot be empty. Please specify your search query.')
 }
 
 function alertNoImagesFound() {
