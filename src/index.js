@@ -87,11 +87,11 @@ function alertImagesFound(data) {
 }
 
 function alertNoEmptySearch() {
-  Notiflix.warning('The search string cannot be empty. Please specify your search query.')
+  Notiflix.failure('The search string cannot be empty. Please specify your search query.')
 }
 
 function alertNoImagesFound() {
- Notiflix.success('Sorry, there are no images matching your search query. Please try again.')
+ Notiflix.failure('Sorry, there are no images matching your search query. Please try again.')
 }
 
 function alertEndOfSearch() {
