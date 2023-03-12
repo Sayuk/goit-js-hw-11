@@ -53,7 +53,9 @@ function onSearchForm(e) {
         }
       }
     })
-    .catch(err => console.log(err))
+    .catch(error => {
+    console.log(error);
+  });
 }
 
 function onLoadMoreBtn() {
@@ -73,7 +75,9 @@ function onLoadMoreBtn() {
       }
     })
     // .catch(error => console.log(error))
-  .catch(err => console.log(err))
+ .catch(error => {
+    console.log(error);
+  });
 }
 
 function alertImagesFound(data) {
