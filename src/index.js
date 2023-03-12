@@ -27,7 +27,7 @@ const refs = {
 
 refs.searchForm.addEventListener('submit', onSearch);
 loadMoreBtn.refs.button.addEventListener('click', onLoadMore);
-// refs.loadMoreBtn.classList.add('is-hidden');
+
 
 
 async function onSearch(e) {
@@ -66,7 +66,7 @@ async function onSearch(e) {
   }
 
   loadMoreBtn.show();
-  // loadMoreBtn.disable();
+
 
 }
 
@@ -81,8 +81,7 @@ loadMoreBtn.enable();
       
 
 async function onLoadMore() {
-// e.preventDefault();
-// console.log('more');
+
 const response = await inputText.makesRequest();
 const {
   data: { hits },
