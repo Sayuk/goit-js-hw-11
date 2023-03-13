@@ -102,7 +102,10 @@ async function createGalleryList(hits) {
 
   refs.gallery.insertAdjacentHTML('beforeend', markup); //Вставляет результат вызова шаблона
 
-  simpleLightbox(lightbox.refresh());
+  simpleLightbox(refresh);
+  // {
+  //   lightbox.refresh();
+  // };
  
   scroll();
 }
