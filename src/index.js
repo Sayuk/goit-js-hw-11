@@ -30,7 +30,7 @@ function simpleLightbox() {
     enableKeyboard: true,
     doubleTapZoom: 5,
   });
-  
+  // lightbox.refresh()
 }
  
 
@@ -102,10 +102,7 @@ async function createGalleryList(hits) {
 
   refs.gallery.insertAdjacentHTML('beforeend', markup); //Вставляет результат вызова шаблона
 
-  simpleLightbox(refresh);
-  // {
-  //   lightbox.refresh();
-  // };
+  simpleLightbox().refresh()
  
   scroll();
 }
