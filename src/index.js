@@ -16,18 +16,24 @@ const loadMoreBtn = new LoadMoreButton({
   hidden: true,
 });
 
-  let lightbox = new SimpleLightbox('.gallery a', {
-    captions: false,
-    captionDelay: 250,
-    enableKeyboard: true,
-    doubleTapZoom: 5,
-  });
 
 const refs = {
   searchForm: document.querySelector('#search-form'),
   gallery: document.querySelector('.gallery'),
   loadMoreBtn: document.querySelector('.load-more'),
 };
+
+function simpleLightbox() {
+    let lightbox = new SimpleLightbox('.gallery a', {
+    captions: false,
+    captionDelay: 250,
+    enableKeyboard: true,
+    doubleTapZoom: 5,
+  });
+  
+}
+ 
+
 
 refs.searchForm.addEventListener('submit', onSearch);
 loadMoreBtn.refs.button.addEventListener('click', onLoadMore);
@@ -97,6 +103,7 @@ async function createGalleryList(hits) {
   refs.gallery.insertAdjacentHTML('beforeend', markup); //Вставляет результат вызова шаблона
 
   simpleLightbox(lightbox.refresh());
+ 
   scroll();
 }
 
@@ -104,10 +111,7 @@ function clearList() {
   refs.gallery.innerHTML = ''; //Очищает контейнер при сл.запросе поиска
 }
 
-// function simpleLightbox() {
-  
-//   // 
-// }
+
 
 function scroll() {
   const { height: cardHeight } = document
