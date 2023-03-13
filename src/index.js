@@ -23,15 +23,15 @@ const refs = {
   loadMoreBtn: document.querySelector('.load-more'),
 };
 
-function simpleLightbox() {
+
     let lightbox = new SimpleLightbox('.gallery a', {
     captions: false,
     captionDelay: 250,
     enableKeyboard: true,
     doubleTapZoom: 5,
   });
-  // lightbox.refresh()
-}
+
+
  
 
 
@@ -102,11 +102,14 @@ async function createGalleryList(hits) {
 
   refs.gallery.insertAdjacentHTML('beforeend', markup); //Вставляет результат вызова шаблона
 
-  simpleLightbox().refresh()
+  simpleLightbox()
  
   scroll();
 }
-
+function simpleLightbox() {
+  lightbox.refresh()
+}
+ 
 function clearList() {
   refs.gallery.innerHTML = ''; //Очищает контейнер при сл.запросе поиска
 }
