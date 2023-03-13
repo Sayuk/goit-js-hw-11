@@ -94,21 +94,24 @@ async function onLoadMore() {
     Notiflix.Notify.failure(
       'Sorry, there are no images matching your search query. Please try again.'
     );
-  } else createGalleryList(hits);
+  } else {
+    createGalleryList(hits, true);
+  } 
 }
 
-async function createGalleryList(hits) {
+async function createGalleryList(hits, isaMakeScroll = false) {
   const markup = itemsTemplate(hits);
 
   refs.gallery.insertAdjacentHTML('beforeend', markup); //Вставляет результат вызова шаблона
 
-  simpleLightbox()
+  lightbox.refresh()
  
+  if (isaMakeScroll) {
   scroll();
 }
-function simpleLightbox() {
-  lightbox.refresh()
+  
 }
+
  
 function clearList() {
   refs.gallery.innerHTML = ''; //Очищает контейнер при сл.запросе поиска

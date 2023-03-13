@@ -17,7 +17,7 @@ export default class NewsApiService {
       image_type: 'photo',
       orientation: 'horizontal',
       safesearch: true,
-      page: this.pageAmount,
+      page: this.page,
       per_page: this.perPage,
     });
     const url = `${BASE_URL}/?${params}`;
